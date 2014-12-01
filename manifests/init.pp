@@ -37,5 +37,8 @@
 #
 class role_snmp {
 
+  class { 'snmp::client':
+    snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs', ],
+  }
 
 }
