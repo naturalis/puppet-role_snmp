@@ -42,10 +42,9 @@ class role_snmp {
   }
 
   # Extract tar file using camptocamp/puppet-archive module
-  archive { 'mibs-Oct2014.zip':
+  archive { 'mibs-Oct2014.tar.gz':
     ensure    => present,
-    url       => 'https://github.com/naturalis/puppet-role_snmp/blob/master/files/mibs-Oct2014.zip',
-    extension => 'zip',
+    url       => 'https://github.com/naturalis/puppet-role_snmp/blob/master/files/mibs-Oct2014.tar.gz',
     target    => '/usr/local/share/snmp/mibs',
     require   => Class ['snmp::client'],
   }
