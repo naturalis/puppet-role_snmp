@@ -41,7 +41,7 @@ class role_snmp {
     snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/mibs-Oct2014', ],
   }
 
-  # Extract tar file using camptocamp/puppet-archive module
+  # Extract HP mib tar files using camptocamp/puppet-archive module
   archive { 'mibs-Oct2014':
     ensure   => present,
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/mibs-Oct2014.tar.gz',
