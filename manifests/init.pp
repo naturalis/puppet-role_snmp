@@ -44,7 +44,6 @@ class role_snmp {
   # Extract tar file using camptocamp/puppet-archive module
   archive { 'mibs-Oct2014':
     ensure   => present,
-    #url      => 'https://github.com/naturalis/puppet-role_snmp/raw/master/files/mibs-Oct2014.tar.gz',
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/mibs-Oct2014.tar.gz',
     target   => '/usr/local/share/snmp/mibs',
     checksum => false,
