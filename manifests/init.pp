@@ -38,7 +38,7 @@
 class role_snmp {
 
   class { 'snmp::client':
-    snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs', ],
+    snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/mibs-Oct2014', ],
   }
 
   # Extract tar file using camptocamp/puppet-archive module
