@@ -49,5 +49,7 @@ class role_snmp {
     checksum => false,
     require  => Class ['snmp::client'],
   }
+  
+#ftp://ftp.apc.com/apc/public/software/pnetmib/mib/412/powernet412.mib
 
 }
