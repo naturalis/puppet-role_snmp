@@ -41,6 +41,7 @@ management, etc.) this is the time to mention it.
 ### Setup Requirements
 
 razorsedge/snmp
+camptocamp/puppet-archive
 
 ### Beginning with role_snmp
 
