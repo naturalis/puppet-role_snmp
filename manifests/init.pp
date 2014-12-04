@@ -37,6 +37,7 @@
 #
 class role_snmp {
 
+  # Configure snmp using module razorsedge/snmp.
   class { 'snmp::client':
     snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/mibs-Oct2014', ],
   }
