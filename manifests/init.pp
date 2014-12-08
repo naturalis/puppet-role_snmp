@@ -43,7 +43,7 @@ class role_snmp {
   }
 
   # Extract HP mib files using module camptocamp/puppet-archive. Download from https://h10145.www1.hp.com/Downloads/SoftwareReleases.aspx?ProductNumber=J9148A&lang=nl&cc=nl&prodSeriesId=1839466
-  archive { 'mibs-Oct2014':
+  archive { 'hp/mibs-Oct2014':
     ensure   => present,
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/mibs-Oct2014.tar.gz',
     target   => '/usr/local/share/snmp/mibs/hp',
@@ -51,6 +51,13 @@ class role_snmp {
     require  => Class ['snmp::client'],
   }
   
-#ftp://ftp.apc.com/apc/public/software/pnetmib/mib/412/powernet412.mib
-
+   # Extract HP mib files using module camptocamp/puppet-archive. Download from ftp://ftp.apc.com/apc/public/software/pnetmib/mib/412/powernet412.mib
+  archive { 'apc':
+    ensure   => present,
+    url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/powernet412.tar.gz',
+    target   => '/usr/local/share/snmp/mibs/apc',
+    checksum => false,
+    require  => Class ['snmp::client'],
+  }
+  
 }
