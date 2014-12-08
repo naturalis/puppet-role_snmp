@@ -39,7 +39,9 @@ class role_snmp {
 
   # Configure snmp using module razorsedge/snmp.
   class { 'snmp::client':
-    snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/hp/mibs-Oct2014', 'mibdirs +/usr/local/share/snmp/mibs/apc' ],
+    snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/hp/mibs-Oct2014',
+                     'mibdirs +/usr/local/share/snmp/mibs/apc'
+                   ],
   }
 
   # Extract HP mib files using module camptocamp/puppet-archive. Download from https://h10145.www1.hp.com/Downloads/SoftwareReleases.aspx?ProductNumber=J9148A&lang=nl&cc=nl&prodSeriesId=1839466
