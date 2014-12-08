@@ -54,7 +54,7 @@ class role_snmp {
    # Extract HP mib files using module camptocamp/puppet-archive. Download from ftp://ftp.apc.com/apc/public/software/pnetmib/mib/412/powernet412.mib
   archive { 'apc':
     ensure   => present,
-    url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/powernet412.tar.gz',
+    url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/powernet412.mib.tar.gz',
     target   => '/usr/local/share/snmp/mibs/apc',
     checksum => false,
     require  => Class ['snmp::client'],
