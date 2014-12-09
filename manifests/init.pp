@@ -41,6 +41,7 @@ class role_snmp {
   class { 'snmp::client':
     snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/hp/mibs-Oct2014',
                      'mibdirs +/usr/local/share/snmp/mibs/apc',
+                     'mibreplacewithlatest yes',
                      'mibs ALL',
                    ],
   }
