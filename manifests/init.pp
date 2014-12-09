@@ -40,7 +40,8 @@ class role_snmp {
   # Configure snmp using module razorsedge/snmp.
   class { 'snmp::client':
     snmp_config => [ 'mibdirs +/usr/local/share/snmp/mibs/hp/mibs-Oct2014',
-                     'mibdirs +/usr/local/share/snmp/mibs/apc'
+                     'mibdirs +/usr/local/share/snmp/mibs/apc',
+                     'mibs ALL',
                    ],
   }
 
