@@ -19,4 +19,6 @@ for device_config in config['devices']:
         stderr=subprocess.PIPE)
         out, err = p.communicate()
         obj = {'host': host, 'description': description, 'devicegroup': devicegroup, 'result': out.rstrip('\n')}
-        print(json.dumps(obj, separators=(', ',': ')))
+#       print(json.dumps(obj, separators=(', ',': ')))
+        with open("out.txt", "a") as out:
+            out.write(json.dumps(obj, separators=(', ',': '))+'\n')
