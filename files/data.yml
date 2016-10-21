@@ -1,0 +1,19 @@
+devices:
+- host: 172.16.1.1
+  community: public
+  devicegroup: pfsense
+  metrics:
+    - oid: RFC1213-MIB::sysName.0
+      description: hostname
+    - oid: HOST-RESOURCES-MIB::hrSystemUptime.0
+      description: uptime
+    - oid: HOST-RESOURCES-MIB::hrSWInstalledName.1
+      description: version
+    - oid: IF-MIB::ifHCInOctets.1
+      description: bandwith_in
+    - oid: IF-MIB::ifHCOutOctets.1
+      description: bandwith_out
+    - oid: BEGEMOT-PF-MIB::pfStateTableCount.0
+      description: statetable_count
+    - oid: HOST-RESOURCES-MIB::hrStorageSize.88
+      name: firewall_maximum_states
