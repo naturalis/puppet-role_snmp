@@ -16,4 +16,4 @@ devices:
     - oid: BEGEMOT-PF-MIB::pfStateTableCount.0
       description: statetable_count
     - oid: HOST-RESOURCES-MIB::hrStorageSize.88
-      description: firewall_maximum_states
+      description: maximum_states
