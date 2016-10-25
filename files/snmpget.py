@@ -14,11 +14,11 @@ for device_config in config['devices']:
     for metric_config in device_config['metrics']:
         oid = metric_config['oid']
         description = metric_config['description']
-        p = subprocess.Popen(['snmpwalk','-v','2c','-c',community,'-Ln','-OUt',host,oid],
+        p = subprocess.Popen(['snmpget','-v','2c','-c',community,'-Ln','-OUt',host,oid],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE)
         out, err = p.communicate()
         obj = {'host': host, 'description': description, 'devicegroup': devicegroup, 'result': out.rstrip('\n')}
 #       print(json.dumps(obj, separators=(', ',': ')))
-        with open("out.txt", "a") as out:
+        with open("/var/log/snmp", "a") as out:
             out.write(json.dumps(obj, separators=(', ',': '))+'\n')
