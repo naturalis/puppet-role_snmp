@@ -53,7 +53,7 @@ class role_snmp {
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/mibs-Oct2014.tar.gz',
     target   => '/usr/local/share/snmp/mibs/hp',
     checksum => false,
-    require  => Class ['snmp::client'],
+    require  => Class['snmp::client'],
   }
   
   # Extract APC mib files using module camptocamp/puppet-archive. Download from ftp://ftp.apc.com/apc/public/software/pnetmib/mib/412/powernet412.mib
@@ -62,7 +62,7 @@ class role_snmp {
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/powernet412.mib.tar.gz',
     target   => '/usr/local/share/snmp/mibs/apc',
     checksum => false,
-    require  => Class ['snmp::client'],
+    require  => Class['snmp::client'],
   }
   
   # Extract APC mib files using module camptocamp/puppet-archive. Download from http://files.pfsense.org/misc/mibs/
@@ -71,7 +71,7 @@ class role_snmp {
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/pfsense.tar.gz',
     target   => '/usr/local/share/snmp/mibs/pfsense',
     checksum => false,
-    require  => Class ['snmp::client'],
+    require  => Class['snmp::client'],
   }
 
 }
