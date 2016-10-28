@@ -35,7 +35,26 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_snmp {
+class role_snmp (
+  $yaml = '
+---
+devices:
+- host: 172.16.1.1
+  community: public
+  devicegroup: pfsense
+  metrics:
+    - oid: RFC1213-MIB::sysName.0
+      description: hostname
+    - oid: HOST-RESOURCES-MIB::hrSystemUptime.0
+      description: uptime
+---
+'
+) {
+
+  # Input for snmpget script
+  file { "/usr/local/bin/data.yml":
+    content => "$yaml",
+  }
 
   # Configure snmp using module razorsedge/snmp.
   class { 'snmp::client':
@@ -72,6 +91,11 @@ class role_snmp {
     target   => '/usr/local/share/snmp/mibs/pfsense',
     checksum => false,
     require  => Class['snmp::client'],
+  }
+
+  # Install additional mib's
+  package { ['snmp-mibs-downloader']:
+    ensure => installed,
   }
 
 }
