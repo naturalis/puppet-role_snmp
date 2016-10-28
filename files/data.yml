@@ -5,15 +5,22 @@ devices:
   metrics:
     - oid: RFC1213-MIB::sysName.0
       description: hostname
+      units:
     - oid: HOST-RESOURCES-MIB::hrSystemUptime.0
       description: uptime
+      units:
     - oid: HOST-RESOURCES-MIB::hrSWInstalledName.1
-      description: software_version
+      description: version
+      units:
     - oid: IF-MIB::ifHCInOctets.1
       description: bandwith_in
+      units: octets
     - oid: IF-MIB::ifHCOutOctets.1
       description: bandwith_out
+      units: octets
     - oid: BEGEMOT-PF-MIB::pfStateTableCount.0
       description: statetable_count
+      units:
     - oid: HOST-RESOURCES-MIB::hrStorageSize.88
-      description: maximum_states
+      description: firewall_maximum_states
+      units:
