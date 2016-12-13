@@ -15,7 +15,7 @@ for device_config in config['devices']:
         oid = metric_config['oid']
         description = metric_config['description']
         units = metric_config['units']
-        p = subprocess.Popen(['snmpget','-v','2c','-c',community,'-Ln','-OUt',host,oid],
+        p = subprocess.Popen(['snmpget','-v','2c','-c',community,'-Ln','-OUte',host,oid],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE)
         out, err = p.communicate()
