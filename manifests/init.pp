@@ -98,4 +98,13 @@ devices:
     ensure => installed,
   }
 
+  # Create logrotate rule; rotate every hour, only if file is bigger than 500MB, keep 1 rotated files
+  logrotate::rule { 'snmp':
+    path         => '/var/log/sensu/snmp',
+    rotate       => 1,
+    rotate_every => 'hour',
+    size         => '500M',
+    #postrotate   => '',
+  }
+
 }
