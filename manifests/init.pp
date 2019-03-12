@@ -72,6 +72,7 @@ devices:
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/mibs-Oct2014.tar.gz',
     target   => '/usr/local/share/snmp/mibs/hp',
     checksum => false,
+    root_dir => '.',
     require  => Class['snmp::client'],
   }
   
@@ -81,6 +82,7 @@ devices:
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/powernet412.mib.tar.gz',
     target   => '/usr/local/share/snmp/mibs/apc',
     checksum => false,
+    root_dir => '.',
     require  => Class['snmp::client'],
   }
   
@@ -90,6 +92,7 @@ devices:
     url      => 'https://raw.githubusercontent.com/naturalis/puppet-role_snmp/master/files/pfsense.tar.gz',
     target   => '/usr/local/share/snmp/mibs/pfsense',
     checksum => false,
+    root_dir => '.',
     require  => Class['snmp::client'],
   }
 
